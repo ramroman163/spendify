@@ -1,9 +1,6 @@
 import os
-# from budget import setBudget
 from . import setBudget, addExpense
-#from validate import validateInputs
-from validate import validateInputs
-#import addExpense
+from validate import validateOptionInput
 
 def submenuAdd() :
     while True:
@@ -30,7 +27,7 @@ Define un tipo de pago, de forma anónima
 ----------------------------------
 Ingresá una opción → ''')
 
-        if (menuOption != 'V' and menuOption != 'v' and not(validateInputs.validateOptionInput(menuOption, 5))):
+        if (menuOption != 'V' and menuOption != 'v' and not(validateOptionInput(menuOption, 5))):
             continue
 
         match menuOption:

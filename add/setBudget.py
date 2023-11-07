@@ -36,6 +36,9 @@ def setBudget():
         break
     
     print("\n> PRESUPUESTO FINAL")
+    for i in budget.keys():
+        print(i + ' ' + budget[i])
+    
     print(budget['amount'], budget['currency'])
     enter = input('\nPresione enter para volver al menú')
     os.system("cls")

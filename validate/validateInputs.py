@@ -23,3 +23,5 @@ def inputModel(variable, notNull = True, isNumber = False, isRange = []):
         enter = input('Tenés que ingresar un número en el campo de ' + variable)
     if len(isRange) and (data < isRange[0] or data > isRange[1]) :
         enter = input('El campo de ' + variable + 'tiene que estar entre ' + isRange[0] + 'y ' + isRange[1])
+    if len(isRange) and (len(data) < isRange[0] or len(data) > isRange[1]):
+        enter = input(f'El texto tiene que estar entre {isRange[0]} y {isRange[1]} caracteres')

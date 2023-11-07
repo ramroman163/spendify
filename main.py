@@ -1,5 +1,6 @@
 from add import submenuAdd
-from validate import validateInputs
+from search import submenuSearch
+from validate import validateOptionInput
 import os
 
 while True:
@@ -27,20 +28,24 @@ No te preocupes ¡tus gastos quedan guardados!
 
 ----------------------------------
     ''')  
-    
-    menuOption = input("Ingresá una opción: ")
+    try:
+        menuOption = input("Ingresá una opción: ")
+    except KeyboardInterrupt:
+        print('\nvuelva pronto')
+        exit()
 
-    if (not(validateInputs.validateOptionInput(menuOption, 5))):
+    if (not(validateOptionInput(menuOption, 5))):
         continue
     
     match menuOption:
         case '1':
             submenuAdd()
         case '2':
-            print('dos')
+            submenuSearch()
         case '3':
             print('tres')
         case '4':
             print('cuatro')
         case '5':
+            os.system("cls")
             exit()
